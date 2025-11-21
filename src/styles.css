@@ -68,7 +68,7 @@ body {
 
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 18rem 8rem;
+  grid-template-rows: 17rem 9rem;
   gap: 2px;
 
   background-color: rgb(52, 102, 209);
@@ -102,12 +102,52 @@ body {
   font-size: 2rem;
 }
 
+.forecast-currently-details {
+  display: grid;
+  grid-template-rows: 1fr 1rem 1rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  padding: 2rem;
+}
+
+.forecast-temp {
+  font-size: 8rem;
+  font-weight: 700;
+}
+
+.forecast-feels-like {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.forecast-humidity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .forecast-daily-set {
   grid-row: 2 / 3;
 
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 2px;
+}
+
+.forecast-daily-item {
+  justify-self: center;
+  align-self: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
 }
 
 .city-dropdown {

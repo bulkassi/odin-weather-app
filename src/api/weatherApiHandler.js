@@ -20,6 +20,7 @@ export const createWeatherApiHandler = function () {
             .split(", ")
             .map((cond) => weatherCodes[cond].description),
         },
+        iconName: weatherData.currentConditions.icon,
       },
       dailyConditions: weatherData.days.slice(0, 8).map((dayData) => {
         return {
@@ -40,6 +41,7 @@ export const createWeatherApiHandler = function () {
               .split(", ")
               .map((code) => weatherCodes[code].description),
           },
+          iconName: dayData.icon,
         };
       }),
     };

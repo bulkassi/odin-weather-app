@@ -38,7 +38,8 @@ const createScreenController = (doc) => {
     // Update background color
     const code = current.conditions.codes[0];
     if (weatherCodes[code]) {
-      body.style.backgroundColor = weatherCodes[code].colors[0];
+      const colors = weatherCodes[code].colors.join(", ");
+      body.style.background = `linear-gradient(to right, ${colors})`;
     }
 
     // Update daily forecast

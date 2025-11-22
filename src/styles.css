@@ -68,7 +68,7 @@ body {
 
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 17rem 9rem;
+  grid-template-rows: 18rem 1fr;
   gap: 2px;
 
   background-color: rgb(52, 102, 209);
@@ -82,6 +82,9 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
+
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .weather-display {
@@ -137,17 +140,25 @@ body {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 2px;
+
+  margin-bottom: 4px;
 }
 
 .forecast-daily-item {
+  height: 100%;
+
   justify-self: center;
   align-self: center;
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 4px;
+}
+
+.forecast-daily-item-icon {
+  max-width: 80%;
 }
 
 .city-picked {

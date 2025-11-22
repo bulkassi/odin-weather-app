@@ -159,6 +159,8 @@ body {
 
 .forecast-daily-item-icon {
   max-width: 80%;
+  height: 4rem;
+  width: auto;
 }
 
 .city-picked {

@@ -1,5 +1,6 @@
 import { createWeatherApiHandler } from "./api/weatherApiHandler";
 import { weatherCodes } from "./api/weatherCodes";
+import { format, isToday, isTomorrow, parseISO } from "date-fns";
 
 const createScreenController = (doc) => {
   const weatherApiHandler = createWeatherApiHandler();
@@ -44,7 +45,7 @@ const createScreenController = (doc) => {
 
     // Update daily forecast
     dailyContainer.innerHTML = "";
-    const nextDays = data.dailyConditions;
+    const nextDays = data.dailyConditions.slice(0, 7);
 
     nextDays.forEach((dayData) => {
       const dayItem = doc.createElement("div");
@@ -52,7 +53,15 @@ const createScreenController = (doc) => {
 
       const dayName = doc.createElement("p");
       dayName.classList.add("forecast-daily-item-day");
-      dayName.textContent = dayData.day;
+
+      const date = parseISO(dayData.day);
+      if (isToday(date)) {
+        dayName.textContent = "Сегодня";
+      } else if (isTomorrow(date)) {
+        dayName.textContent = "Завтра";
+      } else {
+        dayName.textContent = format(date, "dd.MM.yyyy");
+      }
 
       const dayIcon = doc.createElement("img");
       dayIcon.classList.add("forecast-daily-item-icon");

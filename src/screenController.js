@@ -109,6 +109,9 @@ const createScreenController = (doc) => {
   });
 
   loadingRing.style.display = "none";
+
+  fetchWeather("Moscow");
+  searchInput.value = "Moscow";
 };
 
 export { createScreenController };

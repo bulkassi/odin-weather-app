@@ -103,6 +103,8 @@ body {
 
 .weather-icon-description {
   font-size: 2rem;
+
+  text-align: center;
 }
 
 .forecast-currently-details {

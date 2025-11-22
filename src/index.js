@@ -1,4 +1,6 @@
 import "./styles.css";
-import { greeting } from "./greeting.js";
+import { createScreenController } from "./screenController.js";
 
-console.log(greeting);
+createScreenController(document);
+
+// console.log(cityStateCollection);

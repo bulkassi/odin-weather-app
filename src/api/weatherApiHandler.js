@@ -21,8 +21,9 @@ export const createWeatherApiHandler = function () {
             .map((cond) => weatherCodes[cond].description),
         },
         iconName: weatherData.currentConditions.icon,
+        humidity: weatherData.currentConditions.humidity,
       },
-      dailyConditions: weatherData.days.slice(0, 8).map((dayData) => {
+      dailyConditions: weatherData.days.slice(0, 7).map((dayData) => {
         return {
           day: dayData.datetime,
           temp: {
